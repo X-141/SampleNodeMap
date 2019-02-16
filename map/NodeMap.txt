@@ -1,0 +1,12 @@
+6
+0:create_node:20
+1:create_node:21
+2:create_node:22
+3:create_node:23
+4:create_node:45
+5:create_node:47
+0:link_node:1
+1:link_node:2
+2:link_node:3
+3:link_node:4
+4:link_node:5

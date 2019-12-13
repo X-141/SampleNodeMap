@@ -4,6 +4,6 @@ project(SampleNodeMap)
 
 include_directories(include)
 
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB SOURCES "source/*.cpp" "include/*.hpp")
 
 add_executable(SampleNodeMap ${SOURCES})

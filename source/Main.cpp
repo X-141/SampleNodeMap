@@ -1,32 +1,15 @@
-#include "Node.hpp"
+#include <iostream>
+#include <map>
 
-template<typename T>
-void print(T t_arg)
-{
-    std::cout << t_arg << std::endl;
+#include "Parser.hpp"
+
+using namespace std;
+
+int main(int argc, char** argv) {
+
+    cout << "Please Enter the name of your file: ";
+    std::string file_path{};
+    std::getline(std::cin, file_path);
+    Parser parse_instance{file_path};
+    std::cout << "File status: " << static_cast<int>(parse_instance.get_status()) << std::endl;
 }
-
-int main() {
-    Node<int> m_sample{45, 4, true};
-    print(m_sample.addNextPointer(new Node<int>(45, 4)));
-    print(m_sample.addNextPointer(new Node<int>(55, 4)));
-    print(m_sample.addNextPointer(new Node<int>(55, 4)));
-    print(m_sample.addNextPointer(new Node<int>(55, 4)));
-    print(m_sample.addNextPointer(new Node<int>(55, 4)));
-    print(m_sample.addPrevPointer(new Node<int>(65, 4)));
-    print(m_sample.addPrevPointer(new Node<int>(75, 4)));
-    print(m_sample.addPrevPointer(new Node<int>(75, 4)));
-    print(m_sample.addPrevPointer(new Node<int>(75, 4)));
-    print(m_sample.addPrevPointer(new Node<int>(75, 4)));
-
-    for(std::size_t index = 0 ; index < m_sample.getNextSize(); ++index)
-        print(m_sample.getNext(index)->getValue());
-
-    for(std::size_t index = 0 ; index < m_sample.getPrevSize(); ++index)
-        print(m_sample.getPrev(index)->getValue());
-
-    print(m_sample.getNextSize());
-    print(m_sample.getPrevSize());
-}
-
-

@@ -1,12 +1,24 @@
-//#include "Node.h"
-//#include <fstream>
-//
-//#define getLine(x, y) std::getline(x , y)
-//#define log(x) std::cout << x << std::endl;
-//#define CREATE_NODE "create_node"
-//#define LINK_NODE "link_node"
-//
-//class NodeGraph {
+#include <fstream>
+#include <string_view>
+#include <regex>
+#include "Node.hpp"
+
+template <typename T>
+class NodeGraph {
+public:
+    NodeGraph()
+        : m_head(nullptr), m_tail(nullptr)
+    {}
+
+    explicit NodeGraph(const std::string& t_file_path)
+        : m_head(nullptr), m_tail(nullptr)
+    {
+
+    }
+
+private:
+    Node<T>* m_head;
+    Node<T>* m_tail;
 //public:
 //	NodeGraph(Node *node);
 //    NodeGraph(const std::string &filename);
@@ -32,4 +44,5 @@
 //	//Temporary traveling implementation //delete after done
 //	Node *m_currentNode;
 //	bool m_GameEnd;
-//};
+};
+

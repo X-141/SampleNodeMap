@@ -52,9 +52,7 @@ public:
 
 protected:
     int double_hash(int& t_key_1, int t_step) {
-        int key_2 = 5 - (t_key_1 % 5);
-        int sample_key = (t_key_1 + t_step * key_2) % m_var_list.size();
-        return sample_key;
+        return (t_key_1 + t_step * (5 - (t_key_1 % 5))) % m_var_list.size();
     }
     
     int gen_key(const std::string& t_element) {

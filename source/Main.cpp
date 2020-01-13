@@ -50,7 +50,6 @@ using namespace std;
         print(sample_map.get("aissilA"));
         print(sample_map.get("Luis"));
         print(sample_map.get("siuL"));
-        
     }
 
 #endif

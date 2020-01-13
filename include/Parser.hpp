@@ -3,9 +3,11 @@
 #include <fstream>
 #include <string>
 
+/**
+ *  Instance of a single file parser that will create a NodeMap 
+ */
 class Parser {
 public:
-
     enum class FILE_STATUS
     {
         cUNINIT_STATUS,     // 0 No file handle operations have occurred
@@ -52,7 +54,7 @@ public:
     FILE_STATUS get_status() const { return m_status; }
 
 private:
-    std::string m_file_path;    // that stores the target source file path
-    std::fstream m_file_handle; // that stores the source file handle for reading
-    FILE_STATUS m_status;       // that specifies the current status of the parser
+    std::string m_file_path;    // stores the target source file path
+    std::fstream m_file_handle; // stores the source file handle for reading
+    FILE_STATUS m_status;       // specifies the current status of the parser
 };
